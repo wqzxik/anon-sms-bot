@@ -7,6 +7,7 @@ from collections import defaultdict, deque
 from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ChatType
 from aiogram.filters import Command
+from html import escape
 from aiogram.types import (
     Message,
     CallbackQuery,
@@ -98,8 +99,8 @@ def format_user(user):
 
     return (
         "📩 <b>Новое обращение</b>\n\n"
-        f"Имя: {name}\n"
-        f"Username: {username}\n"
+        f"Имя: {escape(name)}\n"
+        f"Username: {escape(username)}\n"
         f"Telegram ID: <code>{user.id}</code>"
     )
 
