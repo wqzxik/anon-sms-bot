@@ -98,10 +98,10 @@ def format_user(user):
     username = f"@{user.username}" if user.username else "Нет"
 
     return (
-        "📩 <b>Новое обращение</b>\n\n"
+        "📩 Новое обращение\n\n"
         f"Имя: {escape(name)}\n"
         f"Username: {escape(username)}\n"
-        f"Telegram ID: <code>{user.id}</code>"
+        f"Telegram ID: {user.id}"
     )
 
 
@@ -214,9 +214,9 @@ async def reply_callback(callback: CallbackQuery):
 
     await callback.answer()
     await callback.message.answer(
-        f"✍️ Напиши сообщение для пользователя {user_id}.\n"
+        f"✍️ Напиши сообщение для пользователя {escape(username)}.\n"
         "Можно отправить текст, фото, видео, документ или другое вложение.\n\n"
-        "Для отмены используй /cancel."
+        "Для отмены режима ответа используй /cancel."
     )
 
 
