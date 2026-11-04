@@ -214,7 +214,7 @@ async def reply_callback(callback: CallbackQuery):
 
     await callback.answer()
     await callback.message.answer(
-        f"✍️ Напиши сообщение для пользователя {escape(username)}.\n"
+        f"✍️ Напиши сообщение для пользователя {user_id}.\n"
         "Можно отправить текст, фото, видео, документ или другое вложение.\n\n"
         "Для отмены режима ответа используй /cancel."
     )
